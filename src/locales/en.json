@@ -1,0 +1,57 @@
+{
+  "title": "Weather",
+  "nav": {
+    "home": "Home",
+    "fav": "Favorites"
+  },
+  "pages": {
+    "favorites": {
+      "title": "Favorites",
+      "no-items": "You haven't added your favorite cities yet, but it's easy to do. Choose any city from the list on Home page and follow the weather ;)"
+    }
+  },
+  "buttons": {
+    "add-card": "Add card",
+    "add-card-title": "Add new weather card",
+    "remove-card": "remove this weather card",
+    "add-to-favorite": "Add to favorite",
+    "remove-from-favorite": "Remove from favorite",
+    "week-state": {
+      "day": "1 day",
+      "week": "5 days"
+    }
+  },
+  "weather-card": {
+    "header-text": "Weather forecast in",
+    "details-item": {
+      "temp-feels": "Feels like: ",
+      "wind-speed": "Wind speed: ",
+      "pressure": "Pressure: ",
+      "humidity": "Humidity: "
+    }
+  },
+  "metrics": {
+    "m-s": "m/s",
+    "hpa": "hPa"
+  },
+  "select-city": {
+    "label": "Select city",
+    "placeholder": "Start typing and select city"
+  },
+  "modals": {
+    "remove-card": {
+      "title": "Remove card?",
+      "text": "Remove card with weather forecast for ",
+      "button-cancel": "Cancel",
+      "button-remove": "Remove"
+    },
+    "favorites-limit": {
+      "title": "Favorites limited",
+      "text": "Sorry, but you can't add more than 5 cards to your favorites, you can delete one of the existing ones and then add this one",
+      "button-cancel": "Ok"
+    }
+  },
+  "footer": {
+    "text": "© OlStan 2023 powered by openweathermap"
+  }
+}

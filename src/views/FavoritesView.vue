@@ -67,6 +67,10 @@ export default {
   padding: 10px;
   border-radius: 4px;
   background: var(--light-color);
+  
+  .night-mode & {
+    background: var(--dark-color);
+  }
 
   &-text {
     margin: 0;

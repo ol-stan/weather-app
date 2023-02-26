@@ -3,7 +3,8 @@
     <fieldset class="select-city-block">
       <legend class="select-city-label">{{ $t('select-city.label') }}</legend>
       <input v-model="city" class="select-city-input" type="text" :placeholder="$t('select-city.placeholder')"
-        autocomplete="off" @focus="getCities" @input="getCities" @keyup.backspace="checkCityValue">
+        autocomplete="off" @focus="getCities" @input="getCities" @touchstart="getCities"
+        @keyup.backspace="checkCityValue">
       <span class="select-city-autocomplete">
         <span v-if="cities" class="select-city-autocomplete-wrapper">
           <span class="select-city-autocomplete-item" v-for="item in cities"

@@ -172,6 +172,7 @@ export default {
         }
       }).then(response => {
         weather.value = response.data
+        setIsDay()
       })
         .catch(error => {
           message.value = `Sorry, weather for location ${city.name} not found, try another location`

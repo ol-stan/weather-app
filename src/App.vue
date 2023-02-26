@@ -87,9 +87,11 @@ body {
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: var(--text-color);
+  background: var(--primary-color);
 
   &.night-mode {
     color: var(--text-color-nm);
+    background: var(--primary-color-nm);
   }
 }
 
@@ -98,11 +100,6 @@ body {
   min-height: calc(100vh - 160px);
   margin: 0;
   padding: 0 0 20px 0;
-  background: var(--primary-color);
-
-  .night-mode & {
-    background: var(--primary-color-nm);
-  }
 }
 
 .layout {

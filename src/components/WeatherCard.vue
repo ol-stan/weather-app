@@ -84,13 +84,15 @@ export default {
     const weekState = ref(false)
     const isLoading = ref(false)
     const { locale } = useI18n()
-    const isDay = ref(null)
+    const isDay = ref(true)
 
     const setIsDay = () => {
       const sunriseTimestamp = weather.value?.sys.sunrise * 1000
       const sunsetTimestamp = weather.value?.sys.sunset * 1000
       const now = Date.now()
-      isDay.value = now > sunriseTimestamp && now < sunsetTimestamp
+      if (sunriseTimestamp && sunsetTimestamp) {
+        isDay.value = now > sunriseTimestamp && now < sunsetTimestamp
+      }
     }
 
     const getForecastData = () => {

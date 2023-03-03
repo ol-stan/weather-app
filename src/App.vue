@@ -3,8 +3,12 @@
   <main class="main">
     <div class="layout">
       <div class="language">
-        <button class="language-button" v-if="$i18n.locale == 'en'" @click="$i18n.locale = 'ua'">Ua</button>
-        <button class="language-button" v-if="$i18n.locale == 'ua'" @click="$i18n.locale = 'en'">En</button>
+        <button class="language-button" v-if="locale == 'en'" @click="locale = 'ua', setUserLanguge()">
+          <UkraineFlagSvg :size="20" />
+        </button>
+        <button class="language-button" v-if="locale == 'ua'" @click="locale = 'en', setUserLanguge()">
+          Eng
+        </button>
       </div>
       <nav class="navigation">
         <router-link to="/">{{ $t('nav.home') }}</router-link>
@@ -26,10 +30,35 @@
 <script>
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import UkraineFlagSvg from '@/components/svg/UkraineFlagSvg.vue'
+
+import { useI18n } from 'vue-i18n'
+import { onMounted, ref } from 'vue'
 
 export default {
   name: 'App',
-  components: { AppHeader, AppFooter }
+  components: { AppHeader, AppFooter, UkraineFlagSvg },
+  setup() {
+    const { locale } = useI18n()
+    const userLanguage = ref(null)
+
+    const getUserLanguage = () => {
+      return localStorage.getItem('language') || null
+    }
+
+    const setUserLanguge = () => {
+      localStorage.setItem('language', locale.value)
+    }
+
+    onMounted(() => {
+      userLanguage.value = getUserLanguage()
+      if (userLanguage.value) {
+        locale.value = userLanguage.value
+      }
+    })
+
+    return { locale, setUserLanguge }
+  }
 }
 </script>
 
@@ -115,8 +144,12 @@ body {
   padding: 0;
 
   &-button {
-    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
     min-width: 40px;
+    min-height: 26px;
     font-weight: 500;
     color: var(--primary-color);
     background: var(--white-color);
